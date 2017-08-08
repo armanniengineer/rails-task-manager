@@ -1,0 +1,9 @@
+<h1> My To-Do Manager </h1>
+
+<% @tasks.each do |task| %>
+  <h2><%= task.content %></h2>
+  <p> <%= task.date %></p>
+  <%= link_to "For more info...", task_path(task)%>
+  <%= link_to "Remove tasks", task_path(task), method: :delete %>
+  <%= link_to "Edit tasks", edit_task_path(task) %>
+<% end %>
